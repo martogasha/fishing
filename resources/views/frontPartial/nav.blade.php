@@ -50,7 +50,7 @@
             <div class="container">
                 <div class="header-left">
                     <a href="index-2.html" class="logo">
-                        <img src="assets/images/logo.png" alt="Porto Logo">
+                        <img src="assets/images/lo.png" alt="FRED FISHING FLIES">
                     </a>
 
                     <nav class="main-nav font2">
