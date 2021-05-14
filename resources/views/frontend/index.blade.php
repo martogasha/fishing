@@ -3,26 +3,18 @@
     <main class="main">
         <div class="home-slider owl-carousel owl-theme show-nav-hover nav-big">
             <div class="home-slide home-slide1 banner">
-                <img class="slide-bg owl-lazy" src="assets/images/lazy.png" data-src="assets/images/slider/slide1.jpg" alt="home banner">
+                <img class="slide-bg owl-lazy" src="assets/images/products/p.jpg" data-src="assets/images/products/p.jpg" alt="home banner">
                 <div class="banner-layer banner-layer-middle">
-                    <h2>Winter Fashion Trends</h2>
-                    <h3 class="text-uppercase mb-0">Get up to 30% off</h3>
-                    <h4 class="m-b-4">on Jackets</h4>
-
-                    <h5 class="text-uppercase">Starting at<span class="coupon-sale-text"><sup>$</sup>199<sup>99</sup></span></h5>
                     <a href="category.html" class="btn btn-dark btn-xl" role="button">Shop Now</a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
 
             <div class="home-slide home-slide2 banner">
-                <img class="slide-bg owl-lazy" src="assets/images/lazy.png" data-src="assets/images/slider/slide2.jpg" alt="home banner">
+                <img class="slide-bg owl-lazy" src="assets/images/lazy.png" data-src="assets/images/products/p1.jpg" alt="home banner">
                 <div class="banner-layer banner-layer-middle">
-                    <h2 class="m-b-1">New Season Hats </h2>
-                    <h3 class="text-uppercase rotated-upto-text mb-0"><small>Up to</small>20% off</h3>
 
                     <hr class="short-thick-divider">
 
-                    <h5 class="text-uppercase d-inline-block mb-0">Starting at <span class="ml-2">$<em>19</em>99</span></h5>
                     <a href="category.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
