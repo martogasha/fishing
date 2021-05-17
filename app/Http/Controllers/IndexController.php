@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
     public function index(){
-        return view('frontend.index');
+        $stocks = Stock::all();
+        return view('frontend.index',[
+            'stocks'=>$stocks
+        ]);
     }
     public function shop(){
         return view('frontend.shop');
