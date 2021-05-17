@@ -22,7 +22,10 @@ class IndexController extends Controller
     public function checkout(){
         return view('frontend.checkout');
     }
-    public function productDetail(){
-        return view('frontend.productdetail');
+    public function productDetail($id){
+        $productDetail = Stock::find($id);
+        return view('frontend.productdetail',[
+            'productDetail'=>$productDetail
+        ]);
     }
 }

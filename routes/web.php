@@ -23,7 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('shop', [App\Http\Controllers\IndexController::class, 'shop']);
-Route::get('productDetail', [App\Http\Controllers\IndexController::class, 'productDetail']);
+Route::get('productDetail/{id}', [App\Http\Controllers\IndexController::class, 'productDetail']);
 Route::get('cart', [App\Http\Controllers\IndexController::class, 'cart']);
 Route::get('checkout', [App\Http\Controllers\IndexController::class, 'checkout']);
 //admin routes

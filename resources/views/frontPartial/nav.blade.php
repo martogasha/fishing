@@ -34,7 +34,7 @@
 
     <!-- Main CSS File -->
     <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/vendor/fontawesome-free/css/all.min.css')}}">
 </head>
 <body class="full-screen-slider">
 <div class="page-wrapper">
@@ -49,7 +49,7 @@
         <div class="header-middle">
             <div class="container">
                 <div class="header-left">
-                    <a href="index-2.html" class="logo">
+                    <a href="{{url('/')}}" class="logo">
                         <img src="assets/images/lo.png" alt="FRED FISHING FLIES">
                     </a>
 

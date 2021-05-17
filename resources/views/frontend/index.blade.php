@@ -29,7 +29,7 @@
                 <div class="col-6 col-sm-4 col-md-3 col-xl-2">
                     <div class="product-default inner-quickview inner-icon">
                         <figure>
-                            <a href="product.html">
+                            <a href="{{url('productDetail',$stock->id)}}">
                                 <img src="{{asset('uploads/product/'.$stock->stock_image)}}">
                             </a>
                             <div class="label-group">

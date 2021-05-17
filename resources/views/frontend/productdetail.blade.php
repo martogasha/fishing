@@ -14,16 +14,7 @@
                                 <div class="product-slider-container">
                                     <div class="product-single-carousel owl-carousel owl-theme">
                                         <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-1.jpg" data-zoom-image="assets/images/products/zoom/product-1-big.jpg"/>
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-2.jpg" data-zoom-image="assets/images/products/zoom/product-2-big.jpg"/>
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-3.jpg" data-zoom-image="assets/images/products/zoom/product-3-big.jpg"/>
-                                        </div>
-                                        <div class="product-item">
-                                            <img class="product-single-image" src="assets/images/products/zoom/product-4.jpg" data-zoom-image="assets/images/products/zoom/product-4-big.jpg"/>
+                                            <img class="product-single-image" src="{{asset('uploads/product/'.$productDetail->stock_image)}}" data-zoom-image="assets/images/products/zoom/product-1-big.jpg"/>
                                         </div>
                                     </div>
                                     <!-- End .product-single-carousel -->
@@ -31,24 +22,10 @@
 											<i class="icon-plus"></i>
 										</span>
                                 </div>
-                                <div class="prod-thumbnail owl-dots" id='carousel-custom-dots'>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-1.jpg"/>
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-2.jpg"/>
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-3.jpg"/>
-                                    </div>
-                                    <div class="owl-dot">
-                                        <img src="assets/images/products/zoom/product-4.jpg"/>
-                                    </div>
-                                </div>
                             </div><!-- End .col-lg-7 -->
 
                             <div class="col-lg-5 col-md-6 product-single-details">
-                                <h1 class="product-title">Silver Porto Headset</h1>
+                                <h1 class="product-title">{{$productDetail->stock_name}}</h1>
 
                                 <div class="ratings-container">
                                     <div class="product-ratings">
@@ -61,38 +38,17 @@
                                 <hr class="short-divider">
 
                                 <div class="price-box">
-                                    <span class="old-price">$81.00</span>
-                                    <span class="product-price">$101.00</span>
+                                    <span class="product-price">Ksh: {{$productDetail->stock_price}}</span>
                                 </div><!-- End .price-box -->
 
                                 <div class="product-desc">
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non.</p>
+                                    <p>{{$productDetail->stock_desc }}</p>
                                 </div><!-- End .product-desc -->
 
                                 <ul class="single-info-list">
                                     <li>AVAILABILITY: <strong>AVAILABLE</strong></li>
                                     <li>SKU: <strong>123456789</strong></li>
                                 </ul>
-
-                                <div class="product-filters-container">
-                                    <div class="product-single-filter">
-                                        <label>Colors:</label>
-                                        <ul class="config-swatch-list">
-                                            <li class="active">
-                                                <a href="#" style="background-color: #0188cc;"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #ab6e6e;"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #ddb577;"></a>
-                                            </li>
-                                            <li>
-                                                <a href="#" style="background-color: #6085a5;"></a>
-                                            </li>
-                                        </ul>
-                                    </div><!-- End .product-single-filter -->
-                                </div><!-- End .product-filters-container -->
 
                                 <hr class="divider">
 
@@ -938,12 +894,12 @@
 <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
 
 <!-- Plugins JS File -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/plugins.min.js"></script>
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/plugins.min.js')}}"></script>
 
 <!-- Main JS File -->
-<script src="assets/js/main.min.js"></script>
+<script src="{{asset('assets/js/main.min.js')}}"></script>
 </body>
 
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/product.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:32:50 GMT -->
