@@ -30,7 +30,7 @@
                     <div class="product-default inner-quickview inner-icon">
                         <figure>
                             <a href="product.html">
-                                <img src="assets/images/products/p.jpg">
+                                <img src="{{asset('uploads/product/'.$stock->stock_image)}}">
                             </a>
                             <div class="label-group">
                                 <span class="product-label label-sale">-30%</span>
