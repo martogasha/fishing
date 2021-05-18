@@ -56,7 +56,7 @@
                                 </div><!-- End .product-ratings -->
                             </div><!-- End .product-container -->
                             <div class="price-box">
-                                <span class="product-price">Ksh: {{$stock->stock_price}}</span>
+                                <span class="product-price">$ {{$stock->stock_price}}</span>
                             </div><!-- End .price-box -->
                         </div><!-- End .product-details -->
                     </div>

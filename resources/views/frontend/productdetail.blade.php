@@ -38,7 +38,7 @@
                                 <hr class="short-divider">
 
                                 <div class="price-box">
-                                    <span class="product-price">Ksh: {{$productDetail->stock_price}}</span>
+                                    <span class="product-price">$ {{$productDetail->stock_price}}</span>
                                 </div><!-- End .price-box -->
 
                                 <div class="product-desc">
