@@ -8,13 +8,16 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function index(){
-        $stocks = Stock::all();
+        $stocks = Stock::paginate(24);
         return view('frontend.index',[
             'stocks'=>$stocks
         ]);
     }
     public function shop(){
-        return view('frontend.shop');
+        $products = Stock::all();
+        return view('frontend.shop',[
+            'products'=>$products
+        ]);
     }
     public function cart(){
         return view('frontend.cart');
@@ -24,8 +27,12 @@ class IndexController extends Controller
     }
     public function productDetail($id){
         $productDetail = Stock::find($id);
+        $feats = Stock::paginate(3);
+        $reals = Stock::paginate(8);
         return view('frontend.productdetail',[
-            'productDetail'=>$productDetail
+            'productDetail'=>$productDetail,
+            'feats'=>$feats,
+            'reals'=>$reals
         ]);
     }
 }

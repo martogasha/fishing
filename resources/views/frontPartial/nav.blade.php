@@ -8,8 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Porto - Bootstrap eCommerce Template</title>
-
     <meta name="keywords" content="HTML5 Template" />
     <meta name="description" content="Porto - Bootstrap eCommerce Template">
     <meta name="author" content="SW-THEMES">
@@ -40,7 +38,7 @@
 <div class="page-wrapper">
     <div class="top-notice text-white bg-dark">
         <div class="container text-center">
-            <h5 class="ls-n-10 mb-0">Get 10% extra OFF on Porto Summer Sale - Use <b>PORTOSUMMER</b> coupon - <a href="category.html">Shop Now!</a></h5>
+            <h5 class="ls-n-10 mb-0">Fro more info contact <b>fredrickokumu79@yahoo.com</b> or <b>+254713196983</b></h5>
             <button title="Close (Esc)" type="button" class="mfp-close">×</button>
         </div><!-- End .container -->
     </div><!-- End .top-notice -->
@@ -140,7 +138,7 @@
 
                                         <figure class="product-image-container">
                                             <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-1.jpg" alt="product" width="80" height="80">
+                                                <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product" width="80" height="80">
                                             </a>
                                             <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
                                         </figure>
