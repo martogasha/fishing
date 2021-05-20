@@ -38,7 +38,6 @@
                             <div class="btn-icon-group">
                                 <button class="btn-icon btn-add-cart" data-toggle="modal" data-target="#addCartModal"><i class="icon-shopping-cart"></i></button>
                             </div>
-                            <a href="ajax/product-quick-view.html" class="btn-quickview" title="Quick View">Quick View</a>
                         </figure>
                         <div class="product-details">
                             <div class="category-wrap">
@@ -218,8 +217,27 @@
         </div>
     </div>
 </div>
-
+<!-- Modal -->
 <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
+<div class="modal fade" id="quickView" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Plugins JS File -->
 <script src="assets/js/jquery.min.js"></script>

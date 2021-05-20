@@ -63,9 +63,7 @@
                                 <hr class="divider">
 
                                 <div class="product-action">
-                                    <div class="product-single-qty">
-                                        <input class="horizontal-quantity form-control" type="text">
-                                    </div><!-- End .product-single-qty -->
+
                                     <form id="productDetailForm">
                                     <input type="hidden" value="{{$productDetail->id}}" name="productId" id="productDetail">
                                     <button type="submit" class="btn btn-dark add-cart">Add To Cart</button>

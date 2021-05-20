@@ -4,7 +4,6 @@
 
         <div class="page-header">
             <div class="container">
-                <h1>Login and Create Account</h1>
             </div><!-- End .container -->
         </div><!-- End .page-header -->
 
