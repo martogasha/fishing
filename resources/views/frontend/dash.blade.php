@@ -1,120 +1,98 @@
 @include('frontPartial.nav')
-<title>Checkout - Fred Fishing Flies</title>
-    <main class="main">
-
-
-        <div class="page-header">
-            <div class="container">
-                <h1>Checkout</h1>
-            </div><!-- End .container -->
-        </div><!-- End .page-header -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<title>Dashboard - Fred Fishing Flies</title>
+<main class="main">
 
         <div class="container">
-            <form action="{{url('placeOrder')}}" method="post">
-                @csrf
             <div class="row row-sparse">
-                <div class="col-lg-8 padding-right-lg">
-                    <ul class="checkout-steps">
-                        <li>
-                            <h2 class="step-title">Shipping Address</h2>
+                <div class="col-lg-9 order-lg-last dashboard-content">
+                    <h2 class="text-primary">My Dashboard</h2>
 
-                            <div class="shipping-step-addresses">
-                                <div class="shipping-address-box active">
+                    <div class="mb-4"></div><!-- margin -->
+
+                    <h3>Account Information</h3>
+
+                    <div class="row row-sparse">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Contact Information
+                                    <a href="#" class="card-edit">Edit</a>
+                                </div><!-- End .card-header -->
+
+                                <div class="card-body">
+                                    <p>
+                                        John Doe<br>
+                                        porto_shop@gmail.com<br>
+                                        <a href="#">Change Password</a>
+                                    </p>
+                                </div><!-- End .card-body -->
+                            </div><!-- End .card -->
+                        </div><!-- End .col-md-6 -->
+
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    newsletters
+                                    <a href="#" class="card-edit">Edit</a>
+                                </div><!-- End .card-header -->
+
+                                <div class="card-body">
+                                    <p>
+                                        You are currently not subscribed to any newsletter.
+                                    </p>
+                                </div><!-- End .card-body -->
+                            </div><!-- End .card -->
+                        </div><!-- End .col-md-6 -->
+                    </div><!-- End .row -->
+
+                    <div class="card">
+                        <div class="card-header">
+                            Address Book
+                            <a href="#" class="card-edit">Edit</a>
+                        </div><!-- End .card-header -->
+
+                        <div class="card-body">
+                            <div class="row row-sparse">
+                                <div class="col-md-6">
+                                    <h4 class="">Default Billing Address</h4>
                                     <address>
-                                        Desmond Mason <br>
-                                        123 Street Name, City Name <br>
-                                        Los Angeles, California 03100 <br>
-                                        United States <br>
-                                        (123) 456-7890 <br>
+                                        You have not set a default billing address.<br>
+                                        <a href="#">Edit Address</a>
                                     </address>
-
-                                </div><!-- End .shipping-address-box -->
-
-                            </div><!-- End .shipping-step-addresses -->
-                            <a href="#" class="btn btn-sm btn-outline-secondary btn-new-address" data-toggle="modal" data-target="#addressModal">+ Update Address</a>
-                        </li>
-
-                    </ul>
-                </div><!-- End .col-lg-8 -->
-
-                <div class="col-lg-4">
-                    <div class="order-summary">
-                        <h3>Summary</h3>
-
-                        <h4>
-                            <a data-toggle="collapse" href="#order-cart-section" class="collapsed" role="button" aria-expanded="false" aria-controls="order-cart-section">{{\Illuminate\Support\Facades\Session::has('cat') ? \Illuminate\Support\Facades\Session::get('cat')->totalQty: ''}} products in Cart</a>
-                        </h4>
-
-                        <div class="collapse" id="order-cart-section">
-                            <table class="table table-mini-cart">
-                                <tbody>
-                                @foreach($products as $product)
-                                <tr>
-                                    <td class="product-col">
-                                        <figure class="product-image-container">
-                                            <a href="{{url('productDetail', $product['item']['id'])}}" class="product-image">
-                                                <img src="{{asset('uploads/product/'.$product['item']['stock_image'])}}" alt="product">
-                                            </a>
-                                        </figure>
-                                        <div>
-                                            <h2 class="product-title">
-                                                <a href="{{url('productDetail',$product['item']['id'])}}">{{$product['item']['stock_name']}}</a>
-                                            </h2>
-
-                                            <span class="product-qty">Qty: {{$product['quantity']}}</span>
-                                        </div>
-                                    </td>
-                                    <td class="price-col">${{$product['item']['stock_price'] * $product['quantity']}}</td>
-                                </tr>
-                                @endforeach
-
-                                <tr>
-                                    <td class="product-col">
-                                        <div>
-                                            <h2 class="product-title">
-                                                <a href="product.html">Total</a>
-                                            </h2>
-                                        </div>
-                                    </td>
-                                    <td class="price-col">${{$totalPrice}}</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                            <div class="checkout-methods">
-                                <a href="{{url('cart')}}" class="btn btn-block btn-sm btn-primary">Edit Cart</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="">Default Shipping Address</h4>
+                                    <address>
+                                        You have not set a default shipping address.<br>
+                                        <a href="#">Edit Address</a>
+                                    </address>
+                                </div>
                             </div>
-                            <br>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
-                                    Paypal
-                                </label>
-                            </div>
-                            <br>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2">
-                                    Credit/Debit Card
-                                </label>
-                            </div>
-                        </div><!-- End #order-cart-section -->
-                    </div><!-- End .order-summary -->
-                </div><!-- End .col-lg-4 -->
+                        </div><!-- End .card-body -->
+                    </div><!-- End .card -->
+                </div><!-- End .col-lg-9 -->
+
+                <aside class="sidebar col-lg-3">
+                    <div class="widget widget-dashboard">
+                        <h3 class="widget-title">My Account</h3>
+
+                        <ul class="list">
+                            <li class="active"><a href="#">Account Dashboard</a></li>
+                            <li><a href="#">My Orders</a></li>
+                            <li><a href="#">Completed Orders</a></li>
+
+                        </ul>
+                    </div><!-- End .widget -->
+                </aside><!-- End .col-lg-3 -->
             </div><!-- End .row -->
-
-            <div class="row row-sparse">
-                <div class="col-lg-12">
-                    <div class="checkout-steps-action">
-                        <button type="submit" class="btn btn-danger float-right">Place Order</button>
-                    </div><!-- End .checkout-steps-action -->
-
-                </div><!-- End .col-lg-8 -->
-            </div><!-- End .row -->
-            </form>
         </div><!-- End .container -->
 
-        <div class="mb-6"></div><!-- margin -->
+        <div class="mb-5"></div><!-- margin -->
     </main><!-- End .main -->
 
     <footer class="footer">
@@ -323,97 +301,6 @@
         </div><!-- End .social-icons -->
     </div><!-- End .mobile-menu-wrapper -->
 </div><!-- End .mobile-menu-container -->
-
-<!-- Modal -->
-<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <form action="#">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="addressModalLabel">Shipping Address</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div><!-- End .modal-header -->
-
-                <div class="modal-body">
-                    <div class="form-group required-field">
-                        <label>First Name </label>
-                        <input type="text" class="form-control form-control-sm" required>
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group required-field">
-                        <label>Last Name </label>
-                        <input type="text" class="form-control form-control-sm" required>
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group">
-                        <label>Company </label>
-                        <input type="text" class="form-control form-control-sm">
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group required-field">
-                        <label>Street Address </label>
-                        <input type="text" class="form-control form-control-sm" required>
-                        <input type="text" class="form-control form-control-sm" required>
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group required-field">
-                        <label>City  </label>
-                        <input type="text" class="form-control form-control-sm" required>
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group">
-                        <label>State/Province</label>
-                        <div class="select-custom">
-                            <select class="form-control form-control-sm">
-                                <option value="CA">California</option>
-                                <option value="TX">Texas</option>
-                            </select>
-                        </div><!-- End .select-custom -->
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group required-field">
-                        <label>Zip/Postal Code </label>
-                        <input type="text" class="form-control form-control-sm" required>
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group">
-                        <label>Country</label>
-                        <div class="select-custom">
-                            <select class="form-control form-control-sm">
-                                <option value="USA">United States</option>
-                                <option value="Turkey">Turkey</option>
-                                <option value="China">China</option>
-                                <option value="Germany">Germany</option>
-                            </select>
-                        </div><!-- End .select-custom -->
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group required-field">
-                        <label>Phone Number </label>
-                        <div class="form-control-tooltip">
-                            <input type="tel" class="form-control form-control-sm" required>
-                            <span class="input-tooltip" data-toggle="tooltip" title="For delivery questions." data-placement="right"><i class="icon-question-circle"></i></span>
-                        </div><!-- End .form-control-tooltip -->
-                    </div><!-- End .form-group -->
-
-                    <div class="form-group-custom-control">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="address-save">
-                            <label class="custom-control-label" for="address-save">Save in Address book</label>
-                        </div><!-- End .custom-checkbox -->
-                    </div><!-- End .form-group -->
-                </div><!-- End .modal-body -->
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link btn-sm" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary btn-sm">Save changes</button>
-                </div><!-- End .modal-footer -->
-            </form>
-        </div><!-- End .modal-content -->
-    </div><!-- End .modal-dialog -->
-</div><!-- End .modal -->
 <!-- Add Cart Modal -->
 <div class="modal fade" id="addCartModal" tabindex="-1" role="dialog" aria-labelledby="addCartModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -442,5 +329,5 @@
 <script src="assets/js/main.min.js"></script>
 </body>
 
-<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/checkout-shipping-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:33:04 GMT -->
+<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:33:04 GMT -->
 </html>

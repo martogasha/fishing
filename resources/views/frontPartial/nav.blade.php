@@ -112,63 +112,48 @@
                     <div class="dropdown cart-dropdown">
                         <a href="#" class="dropdown-toggle dropdown-arrow" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                             <i class="icon-shopping-cart"></i>
-                            <span class="cart-count badge-circle">2</span>
+                            <span class="cart-count badge-circle">{{\Illuminate\Support\Facades\Session::has('cat') ? \Illuminate\Support\Facades\Session::get('cat')->totalQty: ''}}</span>
                         </a>
 
                         <div class="dropdown-menu" >
                             <div class="dropdownmenu-wrapper">
                                 <div class="dropdown-cart-header">
-                                    <span>2 Items</span>
+                                    <span>{{\Illuminate\Support\Facades\Session::has('cat') ? \Illuminate\Support\Facades\Session::get('cat')->totalQty: ''}} Items</span>
 
                                     <a href="{{url('cart')}}" class="float-right">View Cart</a>
                                 </div><!-- End .dropdown-cart-header -->
 
                                 <div class="dropdown-cart-products">
+                                    @if(isset($products))
+                                        @foreach($products as $product)
                                     <div class="product">
                                         <div class="product-details">
                                             <h4 class="product-title">
-                                                <a href="product.html">Woman Ring</a>
+                                                <a href="{{url('productDetail',$product['item']['id'])}}">{{$product['item']['stock_name']}}</a>
                                             </h4>
 
                                             <span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $99.00
+													<span class="cart-product-qty">{{$product['quantity']}}</span>
+													x ${{$product['item']['stock_price']}}
 												</span>
                                         </div><!-- End .product-details -->
 
                                         <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="{{asset('assets/images/products/cart/product-1.jpg')}}" alt="product" width="80" height="80">
+                                            <a href="{{url('productDetail',$product['item']['id'])}}" class="product-image">
+                                                <img src="{{asset('uploads/product/'.$product['item']['stock_image'])}}" alt="product" width="80" height="80">
                                             </a>
                                             <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
                                         </figure>
                                     </div><!-- End .product -->
+                                        @endforeach
+                                    @endif
 
-                                    <div class="product">
-                                        <div class="product-details">
-                                            <h4 class="product-title">
-                                                <a href="product.html">Woman Necklace</a>
-                                            </h4>
-
-                                            <span class="cart-product-info">
-													<span class="cart-product-qty">1</span>
-													x $35.00
-												</span>
-                                        </div><!-- End .product-details -->
-
-                                        <figure class="product-image-container">
-                                            <a href="product.html" class="product-image">
-                                                <img src="assets/images/products/cart/product-2.jpg" alt="product" width="80" height="80">
-                                            </a>
-                                            <a href="#" class="btn-remove icon-cancel" title="Remove Product"></a>
-                                        </figure>
-                                    </div><!-- End .product -->
                                 </div><!-- End .cart-product -->
 
                                 <div class="dropdown-cart-total">
                                     <span>Total</span>
 
-                                    <span class="cart-total-price float-right">$134.00</span>
+                                    <span class="cart-total-price float-right">${{$totalPrice}}</span>
                                 </div><!-- End .dropdown-cart-total -->
 
                                 <div class="dropdown-cart-action">

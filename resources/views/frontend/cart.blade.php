@@ -1,11 +1,12 @@
 @include('frontPartial.nav')
-
+<title>Cart - Fred Fishing Flies</title>
     <main class="main">
 
         <div class="page-header">
             <div class="container">
                 <h1>Shopping Cart</h1>
             </div><!-- End .container -->
+            @include('flash-message')
         </div><!-- End .page-header -->
 
         <div class="container">
@@ -22,22 +23,29 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @if(isset($products))
+                                @foreach($products as $product)
                             <tr class="product-row">
                                 <td class="product-col">
                                     <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
-                                            <img src="assets/images/products/product-1.jpg" alt="product">
+                                        <a href="{{url('productDetail', $product['item']['id'])}}" class="product-image">
+                                            <img src="{{asset('uploads/product/'.$product['item']['stock_image'])}}" alt="product">
                                         </a>
                                     </figure>
                                     <h2 class="product-title">
-                                        <a href="product.html">Running Sneakers</a>
+                                        <a href="{{url('productDetail',$product['item']['id'])}}">{{$product['item']['stock_name']}}</a>
                                     </h2>
                                 </td>
-                                <td>$17.90</td>
-                                <td>
-                                    <input class="vertical-quantity form-control" type="text">
+                                <td>${{$product['item']['stock_price']}}</td>
+                                <td class="text-left">
+                                    <a href="{{url('addByOne',$product['item']['id'])}}" style="padding-left: 20px">+</a>
+                                    <div style="max-width:50px;" class="input-group btn-block">
+                                        <input class="form-control" value="{{$product['quantity']}}" name="quantity" disabled>
+                                    </div>
+                                    <a href="{{url('cartReduceByOne',$product['item']['id'])}}" style="padding-left: 20px">-</a>
+
                                 </td>
-                                <td>$17.90</td>
+                                <td>${{$product['item']['stock_price'] * $product['quantity']}}</td>
                             </tr>
                             <tr class="product-action-row">
                                 <td colspan="4" class="clearfix">
@@ -47,40 +55,12 @@
 
                                     <div class="float-right">
                                         <a href="#" title="Edit product" class="btn-edit"><span class="sr-only">Edit</span><i class="icon-pencil"></i></a>
-                                        <a href="#" title="Remove product" class="btn-remove icon-cancel"><span class="sr-only">Remove</span></a>
+                                        <a href="{{url('cartRemove',$product['item']['id'])}}   " title="Remove product" class="btn-remove icon-cancel"><span class="sr-only">Remove</span></a>
                                     </div><!-- End .float-right -->
                                 </td>
                             </tr>
-
-                            <tr class="product-row">
-                                <td class="product-col">
-                                    <figure class="product-image-container">
-                                        <a href="product.html" class="product-image">
-                                            <img src="assets/images/products/product-2.jpg" alt="product">
-                                        </a>
-                                    </figure>
-                                    <h2 class="product-title">
-                                        <a href="product.html">Men's Apt</a>
-                                    </h2>
-                                </td>
-                                <td>$8.90</td>
-                                <td>
-                                    <input class="vertical-quantity form-control" type="text">
-                                </td>
-                                <td>$8.90</td>
-                            </tr>
-                            <tr class="product-action-row">
-                                <td colspan="4" class="clearfix">
-                                    <div class="float-left">
-                                        <a href="#" class="btn-move">Move to Wishlist</a>
-                                    </div><!-- End .float-left -->
-
-                                    <div class="float-right">
-                                        <a href="#" title="Edit product" class="btn-edit"><span class="sr-only">Edit</span><i class="icon-pencil"></i></a>
-                                        <a href="#" title="Remove product" class="btn-remove icon-cancel"><span class="sr-only">Remove</span></a>
-                                    </div><!-- End .float-right -->
-                                </td>
-                            </tr>
+                            @endforeach
+                            @endif
                             </tbody>
 
                             <tfoot>
@@ -170,9 +150,10 @@
 
                         <table class="table table-totals">
                             <tbody>
-                            <tr>
+                            @if(isset($totalPrice))
+                                <tr>
                                 <td>Subtotal</td>
-                                <td>$17.90</td>
+                                <td>${{$totalPrice}}</td>
                             </tr>
 
                             <tr>
@@ -183,14 +164,14 @@
                             <tfoot>
                             <tr>
                                 <td>Order Total</td>
-                                <td>$17.90</td>
+                                <td>${{$totalPrice}}</td>
                             </tr>
                             </tfoot>
+                            @endif
                         </table>
 
                         <div class="checkout-methods">
-                            <a href="checkout-shipping.html" class="btn btn-block btn-sm btn-primary">Go to Checkout</a>
-                            <a href="#" class="btn btn-link btn-block">Check Out with Multiple Addresses</a>
+                            <a href="{{url('checkout')}}" class="btn btn-block btn-sm btn-primary">Go to Checkout</a>
                         </div><!-- End .checkout-methods -->
                     </div><!-- End .cart-summary -->
                 </div><!-- End .col-lg-4 -->

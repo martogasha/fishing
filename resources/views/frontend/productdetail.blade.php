@@ -66,8 +66,10 @@
                                     <div class="product-single-qty">
                                         <input class="horizontal-quantity form-control" type="text">
                                     </div><!-- End .product-single-qty -->
-
-                                    <a href="cart.html" class="btn btn-dark add-cart" title="Add to Cart">Add to Cart</a>
+                                    <form id="productDetailForm">
+                                    <input type="hidden" value="{{$productDetail->id}}" name="productId" id="productDetail">
+                                    <button type="submit" class="btn btn-dark add-cart">Add To Cart</button>
+                                    </form>
                                 </div><!-- End .product-action -->
 
                                 <hr class="divider mb-1">
@@ -439,7 +441,112 @@
 </div>
 
 <a id="scroll-top" href="#top" title="Top" role="button"><i class="icon-angle-up"></i></a>
-
+<!-- Modal HTML -->
+<div id="cartSuccessModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+            </div>
+            <div class="modal-body text-center">
+                <h4>Great!</h4>
+                <p>ITEM ADDED TO CART</p>
+                <a href="{{url('productDetail',$productDetail->id)}}"><button class="btn btn-success"><span>Continue Shopping</span></button></a>
+                <a href="{{url('cart')}}"><button class="btn btn-info"><span>View Cart</span></button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        font-family: 'Varela Round', sans-serif;
+    }
+    .modal-confirm {
+        color: #434e65;
+        width: 525px;
+    }
+    .modal-confirm .modal-content {
+        padding: 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+    }
+    .modal-confirm .modal-header {
+        background: #47c9a2;
+        border-bottom: none;
+        position: relative;
+        text-align: center;
+        margin: -20px -20px 0;
+        border-radius: 5px 5px 0 0;
+        padding: 35px;
+    }
+    .modal-confirm h4 {
+        text-align: center;
+        font-size: 36px;
+        margin: 10px 0;
+    }
+    .modal-confirm .form-control, .modal-confirm .btn {
+        min-height: 40px;
+        border-radius: 3px;
+    }
+    .modal-confirm .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #fff;
+        text-shadow: none;
+        opacity: 0.5;
+    }
+    .modal-confirm .close:hover {
+        opacity: 0.8;
+    }
+    .modal-confirm .icon-box {
+        color: #fff;
+        width: 95px;
+        height: 95px;
+        display: inline-block;
+        border-radius: 50%;
+        z-index: 9;
+        border: 5px solid #fff;
+        padding: 15px;
+        text-align: center;
+    }
+    .modal-confirm .icon-box i {
+        font-size: 64px;
+        margin: -4px 0 0 -4px;
+    }
+    .modal-confirm.modal-dialog {
+        margin-top: 80px;
+    }
+    .modal-confirm .btn, .modal-confirm .btn:active {
+        color: #fff;
+        border-radius: 4px;
+        background: #eeb711 !important;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        border-radius: 30px;
+        margin-top: 10px;
+        padding: 6px 20px;
+        border: none;
+    }
+    .modal-confirm .btn:hover, .modal-confirm .btn:focus {
+        background: #eda645 !important;
+        outline: none;
+    }
+    .modal-confirm .btn span {
+        margin: 1px 3px 0;
+        float: left;
+    }
+    .modal-confirm .btn i {
+        margin-left: 1px;
+        font-size: 20px;
+        float: right;
+    }
+    .trigger-btn {
+        display: inline-block;
+        margin: 100px auto;
+    }
+</style>
 <!-- Plugins JS File -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
@@ -448,6 +555,47 @@
 <!-- Main JS File -->
 <script src="{{asset('assets/js/main.min.js')}}"></script>
 </body>
+<script>
+    $('#relatedForm').on('submit',function (event) {
+        event.preventDefault();
+        productId = $('#related').val();
+        $.ajax({
+            type:"post",
+            url:"{{route('addToCart')}}",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                productId:productId},
+            success:function (data) {
+                $('#ignismyModal').modal('show');
+            },
+            error:function (error) {
+                console.log(error)
+                alert('error')
 
+            }
+
+        });
+    });
+    $('#productDetailForm').on('submit',function (event) {
+        event.preventDefault();
+        productId = $('#productDetail').val();
+        $.ajax({
+            type:"post",
+            url:"{{route('addToCart')}}",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                productId:productId},
+            success:function (data) {
+                $('#cartSuccessModal').modal('show');
+            },
+            error:function (error) {
+                console.log(error)
+                alert('error')
+
+            }
+
+        });
+    });
+</script>
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/product.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:32:50 GMT -->
 </html>

@@ -56,12 +56,12 @@
                     </nav>
 
                     <div class="row">
-                        @foreach($products as $product)
+                        @foreach($stocks as $stock)
                         <div class="col-6 col-sm-4 col-md-3 col-xl-5col">
                             <div class="product-default inner-quickview inner-icon">
                                 <figure>
-                                    <a href="{{url('productDetail',$product->id)}}">
-                                        <img src="{{asset('uploads/product/'.$product->stock_image)}}">
+                                    <a href="{{url('productDetail',$stock->id)}}">
+                                        <img src="{{asset('uploads/product/'.$stock->stock_image)}}">
                                     </a>
                                     <div class="label-group">
                                         <span class="product-label label-sale">-20%</span>
@@ -77,7 +77,7 @@
                                         </div>
                                     </div>
                                     <h2 class="product-title">
-                                        <a href="product.html">{{$product->stock_name}}</a>
+                                        <a href="product.html">{{$stock->stock_name}}</a>
                                     </h2>
                                     <div class="ratings-container">
                                         <div class="product-ratings">
@@ -86,7 +86,7 @@
                                         </div><!-- End .product-ratings -->
                                     </div><!-- End .product-container -->
                                     <div class="price-box">
-                                        <span class="product-price">${{$product->stock_price}}</span>
+                                        <span class="product-price">${{$stock->stock_price}}</span>
                                     </div><!-- End .price-box -->
                                 </div><!-- End .product-details -->
                             </div>

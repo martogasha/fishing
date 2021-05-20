@@ -1,5 +1,5 @@
 @include('frontPartial.nav')
-
+<title>Login - Fred Fishing Flies</title>
     <main class="main">
 
         <div class="page-header">
@@ -33,16 +33,18 @@
                         <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
                     </div><!-- End .heading -->
 
-                    <form action="#">
-                        <input type="text" class="form-control" placeholder="First Name" required>
-                        <input type="text" class="form-control" placeholder="Middle Name" required>
-                        <input type="text" class="form-control" placeholder="Last Name" required>
+                    <form action="{{route('register')}}" method="post">
+                        @csrf
+                        <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                        <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
 
                         <h2>Login information</h2>
-                        <input type="email" class="form-control" placeholder="Email Address" required>
-                        <input type="password" class="form-control" placeholder="Password" required>
-                        <input type="password" class="form-control" placeholder="Confirm Password" required>
-
+                        <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+                        <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
+                        <input type="password" class="form-control" name="password" id="password1" placeholder="Password" required>
+                        <input type="password" class="form-control" id="confirmPassword1" placeholder="Confirm Password" required>
+                        <span class="badge badge-success" id="passwordMatch">Password match</span>
+                        <span class="badge badge-danger" id="passwordError">Password don't match match</span>
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="newsletter-signup">
                             <label class="custom-control-label" for="newsletter-signup">Sing up our Newsletter</label>
@@ -292,6 +294,23 @@
 <!-- Main JS File -->
 <script src="assets/js/main.min.js"></script>
 </body>
+<script>
+    $(document).ready(function () {
+        $('#passwordError').hide();
+        $('#passwordMatch').hide();
+    });
+    $('#confirmPassword1').on('keyup',function () {
+        if ($('#password1').val() == $('#confirmPassword1').val() ){
+            $('#passwordMatch').show();
+            $('#passwordError').hide();
+        }
+        else {
+            $('#passwordError').show();
+            $('#passwordMatch').hide();
+        }
+    });
+</script>
+
 
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:33:17 GMT -->
 </html>
