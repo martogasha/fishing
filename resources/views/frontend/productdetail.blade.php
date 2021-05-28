@@ -4,6 +4,7 @@
 <br>
 <br>
 <br>
+<br>
 <title>{{$productDetail->stock_name}} - Fred Fishing Flies</title>
     <main class="main">
         <div class="container">
