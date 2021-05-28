@@ -13,7 +13,7 @@
     <meta name="author" content="SW-THEMES">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/icons/favicon.ico')}}">
+    <link rel="icon" type="image/x-icon" href="{{asset('assets/images/fredLogo.jpg')}}">
 
     <script type="text/javascript">
         WebFontConfig = {
