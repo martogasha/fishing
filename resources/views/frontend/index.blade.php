@@ -5,7 +5,7 @@
             <div class="home-slide home-slide1 banner">
                 <img class="slide-bg owl-lazy" src="assets/images/products/h1.jpg" data-src="assets/images/products/h1.jpg" alt="home banner">
                 <div class="banner-layer banner-layer-middle" >
-                    <a href="category.html" class="btn btn-dark btn-xl" role="button">Shop Now</a>
+                    <a href="{{url('shop')}}" class="btn btn-dark btn-xl" role="button">Shop Now</a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
 
@@ -15,7 +15,7 @@
 
                     <hr class="short-thick-divider">
 
-                    <a href="category.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="{{url('shop')}}" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
             <div class="home-slide home-slide2 banner">
@@ -24,7 +24,7 @@
 
                     <hr class="short-thick-divider">
 
-                    <a href="category.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                    <a href="{{url('shop')}}" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
 
