@@ -3,14 +3,23 @@
     <main class="main">
         <div class="home-slider owl-carousel owl-theme show-nav-hover nav-big">
             <div class="home-slide home-slide1 banner">
-                <img class="slide-bg owl-lazy" src="assets/images/products/p.jpg" data-src="assets/images/products/p.jpg" alt="home banner">
+                <img class="slide-bg owl-lazy" src="assets/images/products/Slide.jpg" data-src="assets/images/products/Slide.jpg" alt="home banner">
                 <div class="banner-layer banner-layer-middle">
                     <a href="category.html" class="btn btn-dark btn-xl" role="button">Shop Now</a>
                 </div><!-- End .banner-layer -->
             </div><!-- End .home-slide -->
 
             <div class="home-slide home-slide2 banner">
-                <img class="slide-bg owl-lazy" src="assets/images/lazy.png" data-src="assets/images/products/p1.jpg" alt="home banner">
+                <img class="slide-bg owl-lazy" src="assets/images/Slide2.png" data-src="assets/images/products/Slide2.jpg" alt="home banner">
+                <div class="banner-layer banner-layer-middle">
+
+                    <hr class="short-thick-divider">
+
+                    <a href="category.html" class="btn btn-dark btn-xl btn-icon-right" role="button">Shop Now <i class="fas fa-long-arrow-alt-right"></i></a>
+                </div><!-- End .banner-layer -->
+            </div><!-- End .home-slide -->
+            <div class="home-slide home-slide2 banner">
+                <img class="slide-bg owl-lazy" src="assets/images/Slide3.png" data-src="assets/images/products/Slide3.jpg" alt="home banner">
                 <div class="banner-layer banner-layer-middle">
 
                     <hr class="short-thick-divider">

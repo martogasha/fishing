@@ -48,7 +48,7 @@
             <div class="container">
                 <div class="header-left">
                     <a href="{{url('/')}}" class="logo">
-                        <img src="assets/images/lo.png" alt="FRED FISHING FLIES">
+                        <img src="assets/images/fredLogo.jpg" alt="FRED FISHING FLIES"><h5>Fred Fishing Flies</h5>
                     </a>
 
                     <nav class="main-nav font2">
