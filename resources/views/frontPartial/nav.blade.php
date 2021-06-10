@@ -60,7 +60,7 @@
                                 <a href="{{url('shop')}}">Shop</a>
                             </li>
                             <li>
-                                <a href="index-2.html">Services</a>
+                                <a href="{{url('aboutUs')}}">About Us</a>
                             </li>
                             <li>
                                 <a href="{{url('login')}}">Login</a>

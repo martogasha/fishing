@@ -1,4 +1,4 @@
-@include('frontPartial.nav')
+    @include('frontPartial.nav')
 <title>Fred Fishing Flies - Home</title>
     <main class="main">
         <div class="home-slider owl-carousel owl-theme show-nav-hover nav-big">

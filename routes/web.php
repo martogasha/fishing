@@ -24,6 +24,7 @@ Route::get('login', [App\Http\Controllers\AuthController::class, 'login']);
 Route::post('register', [App\Http\Controllers\AuthController::class, 'register'])->name('register');
 Route::get('/', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('shop', [App\Http\Controllers\IndexController::class, 'shop']);
+Route::get('aboutUs', [App\Http\Controllers\IndexController::class, 'aboutUs']);
 Route::get('productDetail/{id}', [App\Http\Controllers\IndexController::class, 'productDetail']);
 Route::get('cart', [App\Http\Controllers\IndexController::class, 'cart']);
 Route::post('addToCart', [App\Http\Controllers\CartController::class, 'addToCart'])->name('addToCart');
