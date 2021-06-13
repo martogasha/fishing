@@ -62,9 +62,9 @@
                         <h4 class="widget-title">My Account</h4>
                         <ul class="links link-parts row">
                             <div class="link-part col-xl-4">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
-                                <li><a href="my-account.html">My Account</a></li>
+                                <li><a href="{{url('aboutUs')}}">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">My Account</a></li>
                             </div>
                             <div class="link-part col-xl-8">
                                 <li><a href="#">Orders History</a></li>
