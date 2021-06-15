@@ -104,7 +104,7 @@
                                         <td><img src="{{asset('uploads/product/'.$product->stock_image)}}" class="img-circle" alt="User Image" width="50" height="50"> </td>
                                         <td>{{$product->stock_name}}</td>
                                         <td>{{$product->stock_desc}}</td>
-                                        <td>Ksh: {{$product->stock_price}}</td>
+                                        <td>$: {{$product->stock_price}}</td>
                                         <td>
                                             <button type="button" class="btn btn-add btn-sm edit" id="{{$product->id}}" data-toggle="modal" data-target="#editStock"><i class="fa fa-pencil"></i></button>
                                             <button class="btn btn-danger view"  data-toggle="modal" data-target="#editStock"><i class="fa fa-trash-o"></i> </button>

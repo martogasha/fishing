@@ -75,4 +75,12 @@ class IndexController extends Controller
             'totalPrice'=>$cart->totalPrice
         ]);
     }
+    public function contactUs(){
+        $oldCart = Session::get('cat');
+        $cart = new Cat($oldCart);
+        return view('frontend.contact',[
+            'products'=>$cart->item,
+            'totalPrice'=>$cart->totalPrice
+        ]);
+    }
 }

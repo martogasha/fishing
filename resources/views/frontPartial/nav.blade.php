@@ -63,6 +63,9 @@
                                 <a href="{{url('aboutUs')}}">About Us</a>
                             </li>
                             <li>
+                                <a href="{{url('contactUs')}}">Contact Us</a>
+                            </li>
+                            <li>
                                 <a href="{{url('login')}}">Login</a>
                             </li>
                         </ul>
