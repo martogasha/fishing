@@ -305,6 +305,13 @@
 <!-- Main JS File -->
 <script src="assets/js/main.min.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QM01T1H30F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QM01T1H30F');
+</script>
 
 </body>
 
