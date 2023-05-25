@@ -102,6 +102,13 @@
 
 <!-- Main JS File -->
 <script src="assets/js/main.min.js"></script>
-<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:33:04 GMT -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM01T1H30F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QM01T1H30F');
+</script>
 </html>
 
