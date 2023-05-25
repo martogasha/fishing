@@ -266,6 +266,4 @@
   gtag('config', 'G-QM01T1H30F');
 </script>
 </body>
-
-<!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:30:43 GMT -->
 </html>
