@@ -251,12 +251,20 @@
 </div>
 
 <!-- Plugins JS File -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QM01T1H30F"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/plugins.min.js"></script>
 
 <!-- Main JS File -->
 <script src="assets/js/main.min.js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-QM01T1H30F');
+</script>
 </body>
 
 <!-- Mirrored from portotheme.com/html/porto_ecommerce/demo_1/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Oct 2020 05:30:43 GMT -->
